@@ -1,0 +1,83 @@
+.sub-navbar {
+    /* background-color: #4c7c7d;  */
+    padding: 20px 10px; /* Padding for height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative; /* Ensure it sits well in the layout */
+}
+
+.sub-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox for layout */
+    justify-content: space-around; /* Distribute space evenly between items */
+    flex-wrap: wrap; 
+    
+}
+
+.sub-navbar li {
+    margin: 0 15px; /* Spacing between items */
+}
+
+.sub-navbar a {
+    color: rgb(0, 0, 0); /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding for clickable area */
+    font-size: 10px; /* Default font size */
+    transition: background-color 0.3s, color 0.3s; 
+    border-radius: 5px;
+    font-weight: 300px;
+}
+
+/* Hover effect */
+.sub-navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #693838; /* Maintain text color */
+}
+
+.sub-navbar a.logout {
+    color: red; /* Change color for logout link */
+    font-weight: bold; /* Make it bold */
+}
+
+/* Optional hover effect for logout */
+.sub-navbar a.logout:hover {
+    background-color: rgba(255, 0, 0, 0.2); /* Light red background on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .sub-navbar {
+        padding: 10px 0; /* Adjust padding for mobile */
+    }
+
+    .sub-navbar a {
+        font-size: 16px; /* Smaller font size for mobile */
+        padding: 8px 12px; /* Adjust padding */
+    }
+
+    .sub-navbar ul {
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: center; /* Center items */
+    }
+
+    .sub-navbar li {
+        margin: 5px 0; /* Adjust spacing between items */
+    }
+}
+
+/* Desktop Specific Styles */
+@media (min-width: 601px) {
+    .sub-navbar a {
+        font-size: 18px; /* Larger font size for desktop */
+        padding: 10px 20px; /* More padding for clickable area */
+    }
+
+    .sub-navbar li {
+        margin: 0 20px; /* More spacing between items */
+    }
+
+    .sub-navbar ul {
+        justify-content: center; /* Center items in desktop view */
+    }
+}

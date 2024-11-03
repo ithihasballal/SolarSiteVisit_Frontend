@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SiteVisitPost from './SiteVisitPost';
+import SiteVisitTable from './SiteVisitTable';
+import ViewDetails from './ViewDetails';
+import Login from './Login';
+import InspectorHome from './InspectorHome';
+import ApproverHome from './ApproverHome';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+        <Router>
+          <Routes>
+            <Route path= "/" element={<Login />}  />
+            <Route path="/approver-home"  element =  {<ApproverHome />} />
+            <Route path="/inspector-home" element={<InspectorHome />} />
+            <Route path="/site-visit-post" element={<SiteVisitPost/>} />
+            <Route path="/site-visits" element={<SiteVisitTable />} />
+            <Route path="/view-details/:id" element={<ViewDetails />} />
+          </Routes>
+        </Router>
+      );
+    }
 
 export default App;
